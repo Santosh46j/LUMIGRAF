@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumigraf - Your Movie Box</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Lumigraf</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#tvshows">TV Shows</a></li>
+                <li><a href="#genres">Genres</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Welcome to Lumigraf</h1>
+            <p>Your ultimate destination for movies and TV shows</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for movies or TV shows...">
+                <button>Search</button>
+            </div>
+        </section>
+
+        <section id="featured">
+            <h2>Featured Content</h2>
+            <div class="content-grid">
+                <div class="movie-card" data-movie-id="27205">
+                    <div class="movie-image">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Movie 1">
+                        <div class="movie-overlay">
+                            <button class="play-btn" onclick="playMovie(27205)">▶</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3>Inception</h3>
+                        <p class="rating">⭐ 8.8</p>
+                        <p class="year">2010</p>
+                    </div>
+                </div>
+                <div class="movie-card" data-movie-id="155">
+                    <div class="movie-image">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Movie 2">
+                        <div class="movie-overlay">
+                            <button class="play-btn" onclick="playMovie(155)">▶</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3>The Dark Knight</h3>
+                        <p class="rating">⭐ 9.0</p>
+                        <p class="year">2008</p>
+                    </div>
+                </div>
+                <div class="movie-card" data-movie-id="157336">
+                    <div class="movie-image">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Movie 3">
+                        <div class="movie-overlay">
+                            <button class="play-btn" onclick="playMovie(157336)">▶</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3>Interstellar</h3>
+                        <p class="rating">⭐ 8.6</p>
+                        <p class="year">2014</p>
+                    </div>
+                </div>
+                <div class="movie-card" data-movie-id="680">
+                    <div class="movie-image">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Movie 4">
+                        <div class="movie-overlay">
+                            <button class="play-btn" onclick="playMovie(680)">▶</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3>Pulp Fiction</h3>
+                        <p class="rating">⭐ 8.9</p>
+                        <p class="year">1994</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories">
+            <h2>Browse by Genre</h2>
+            <div class="genre-list">
+                <button>Action</button>
+                <button>Comedy</button>
+                <button>Drama</button>
+                <button>Horror</button>
+                <button>Sci-Fi</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Lumigraf</h3>
+                <p>Your favorite movie streaming platform</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lumigraf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container">
+                <video id="moviePlayer" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <button id="playPauseBtn" class="control-btn">⏸</button>
+                    <button id="muteBtn" class="control-btn">🔊</button>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
